@@ -34,9 +34,21 @@ function allArrets(idLine) {
 fetch(urlArrets + idLine)
 .then(response => response.json())
 .then(data => {
-    console.log(data.physicalStops.physicalStop)
+    const arrets = data.physicalStops.physicalStop
+    console.log(arrets)
+    let arretsFilter = filterSameArret(arrets)
+    document.querySelector('#lines2').innerHTML = ""
+    for(x of arretsFilter) {
+        document.querySelector('#lines2').innerHTML += '<li value=' + x.id +'><a class="line">' + x.name + '</a></li>'
+        document.querySelector('#lines2').innerHTML += '</br>'
+    }
     
 
 })
 .catch(err => console.error(err))
+}
+
+function filterSameArret(array) {
+    return Object.values(array.reduce((acc,cur)=>Object.assign(acc,{[cur.name]:cur}),{}))
+
 }
