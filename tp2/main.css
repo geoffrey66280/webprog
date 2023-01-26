@@ -1,0 +1,41 @@
+body {
+    background-image: url('./XMkBD2.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.icon_user {
+    height: 4em;
+    width: auto;
+    border-radius: 40px;
+}
+
+#bcg {
+    animation: 1s ease-out 0s 1 slideInLeft;
+}
+
+.card {
+    padding: 0px;
+    transition: 0.4s;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 10px 8px;
+    
+    border: solid 1px green;
+    animation: bounceliste 0.5s ease infinite alternate;
+}
+
+@keyframes bounceliste { 
+    from {transform: translateY(0);} 
+    to {transform: translateY(-4px)};
+} 
+
+@keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }

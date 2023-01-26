@@ -2,6 +2,9 @@ const urlLignes = "https://api.tisseo.fr/v1/lines.json?&key=a3732a1074e2403ce364
 const urlArrets = "https://api.tisseo.fr/v1/stop_points.json?key=a3732a1074e2403ce364ad6e71eb998cb&lineId="
 const urlArretsSuivant = "https://api.tisseo.fr/v1/stops_schedules.json?key=a3732a1074e2403ce364ad6e71eb998cb&stopPointId="
 
+document.querySelector("button").addEventListener('click', () => {
+    allLines()
+})
 function allLines() {
 fetch(urlLignes)
 .then(response => response.json())
